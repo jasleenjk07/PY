@@ -3,9 +3,10 @@ import trigo as tr
 import complex as cp
 import log as lg
 import quadratic as qd
+import factorial as fc
 
 def modeSelection():
-    choose = input("Choose mode :- Basic(B)/Trigo(T)/Complex(C)/Logarithm(L),Quadratic(Q):")
+    choose = input("Choose mode :- Basic(B)/Trigo(T)/Complex(C)/Logarithm(L),Quadratic(Q)/Factorial(F):")
     if choose == "B":
         basic()
     elif choose == "T":
@@ -16,6 +17,8 @@ def modeSelection():
         log() 
     elif choose == "Q":
         quad()
+    elif choose == "F":
+        fact()
     else:
         print("Wrong Choice")
 
@@ -139,6 +142,19 @@ def quad():
         qd.less(a,b,c,d)
     else:
         qd.greater(a,b,c,d)
+
+def fact():
+    #User Input
+    print("For Changing Mode (CM)")
+    action = input("action: ")
+
+    #Mode Selection
+    if action == "CM":
+        modeSelection()
+        return 0
+    
+    num = int(input("num: "))
+    fc.factorial(num)
 
 # Starting Point Of Calculator
 modeSelection()
